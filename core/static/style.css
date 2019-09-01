@@ -1,14 +1,22 @@
 *{
 	margin: 0;
 	padding: 0;
-	font-family: "montserrat",sans-serif;
+	font-family: "PURISA",sans-serif;
+}
+
+a{
+	color: white
 }
 
 .header{
 	height: 100px;
-	background: rgb(0,180,100);
+	background: rgb(20,160,100);
 	padding:0 20px;
 	color: #fff;
+}
+
+.paddingLogo{
+	padding: 7px
 }
 
 .logo {
@@ -18,12 +26,17 @@
 }
 
 .menu {
-	float: right;
+	float: left;
 	line-height: 100px;
 }
 
+.paddingLeft{
+	margin-left: 40vh
+}
+
 .menu a{
-	color: #fff
+	color: #fff;
+	font-weight: 1000;
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 0 10px;
@@ -48,7 +61,7 @@
 .menu a:hover,
 .show-menu-btn:hover,
 .hide-menu-btn:hover{
-	color: rgb(164,69,152);
+	color: rgba(190,35,190,0.7);
 }
 
 #chk{
@@ -89,4 +102,46 @@
 	#chk:checked ~ .menu{
 		right: 0;
 	}
+}
+
+.search-box{
+    position: absolute;
+    right: 5%;
+    background-color: rgb(210, 255, 210);
+    height: 50px;
+    transform: translate(0%, 0%);
+    border-radius: 50px;
+    padding: 10px;
+}
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+.search-box:hover > .search-btn{
+    background: none;
+    color: rgba(31,31,31,1.00);
+}
+.search-btn{
+    color: rgba(31,120,31,1.00);
+    float: right;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(210, 255, 210);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 0px;
 }
