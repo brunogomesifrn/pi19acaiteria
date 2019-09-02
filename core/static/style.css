@@ -2,9 +2,9 @@ body{
   margin: 0;
   padding: 0;
 }
-@@font-face {
+@font-face {
   font-family: 'Luna', sans-serif;
-  src: url(fonts/Luna.ttf) format('ttf');
+  src: url(fonts/Luna.ttf) format('Truetext');
 }
 
 .nave{
