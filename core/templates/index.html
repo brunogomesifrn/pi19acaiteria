@@ -25,31 +25,36 @@
 
 </head>
 <body>
-	<div class="header">
-		<h2 class="logo"> <img class="paddingLogo" with="95px" height="95px" src="{% static 'img/logo.png' %}"> </h2>
-		<input type="checkbox" id="chk">
-		<label for="chk" class="show-menu-btn">
-			<i class="fas fa-ellipsis-h"></i>
-		</label>
-
-		<ul class="menu">
-			<a class="paddingLeft" href="#">Cadastro</a>
-			<a href="#">Login</a>
-			<a href="#">Cardápio</a>
-			<a href="#">Fale Conosco</a>
-			<label for="chk" class="hide-menu-btn">
-				<i class="fas fa-times"></i>
-			</label>
-
-		</ul>
-
-		<div class="search-box">
-			<input class="search-txt" type="text" name="" placeholder="Pesquisar">
-			<a class="search-btn" href="#">
-				<i class="fas fa-search"></i>
-			</a>
-		</div>
-	</div>
+	<header>
+		<div class="logo"> LOGO </div>
+			<nav>
+				<ul class="nave">
+					<li>
+						<a href="#" class="active">Início</a>
+					</li>
+					<li>
+						<a href="#">Cadastre-se</a>
+					</li>
+					<li>
+						<a href="#">Login</a>
+					</li>
+					<li>
+						<a href="#">Fale Conosco</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="menu-toggle">
+				<i class="fas fa-bars"></i>
+			</div>
+	</header>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menu-toggle').click(function(){
+				$('nav').toggleClass('active')
+			})
+		})
+	</script>
 
 </body>
 </html>
