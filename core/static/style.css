@@ -5,7 +5,7 @@ body{
 @font-face {
   font-family: 'Luna', sans-serif;
   src: local("Luna"),
-      url(fonts/Luna.ttf) format('ttf');
+      url(fonts/Luna.ttf) format('truetype');
 }
 
 .nave{
