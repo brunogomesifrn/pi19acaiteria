@@ -5,12 +5,13 @@ body{
 @font-face {
   font-family: 'Luna', sans-serif;
   src: local("Luna"),
-      url(fonts/Luna.ttf) format('truetype');
+      url('fonts/Luna.ttf') format('truetype');
 }
 
 .nave{
-  font-family: "Luna";
-  font-weight: 1000
+  font-family: "Chilanka", cursive;
+  font-weight: 1000;
+  font-size: 3.2vh
 }
 header{
   position:absolute;
@@ -107,7 +108,9 @@ header nav ul li a.active
 }
 
 .paddingImg {
-  padding-bottom: 2;
+  padding-bottom: 3px;
+  width: 90px;
+  height: 90px;
 
 }
 
