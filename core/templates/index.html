@@ -11,234 +11,251 @@
 	<link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 	<link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
-  <link href="assets/css/bootstrap.css" rel="stylesheet" />
-  <link href="assets/css/bootstrap-theme.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/slippry.css">
-  <link href="assets/css/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/color/default.css">
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css" />
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="assets/js/modernizr.custom.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<link href="assets/css/bootstrap-theme.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/slippry.css">
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/color/default.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css" />
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="assets/js/modernizr.custom.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-	<header>
-		<div class="logo"> <img src="{% static 'img/logo.png' %}" class="paddingImg"> </div>
-			<nav>
-				<ul class="nave">
-					<!-- <li>
-						<a href="#" class="active">Início</a>
-					</li> -->
-					<li>
-						<a href="#">Cadastre-se</a>
-					</li>
-					<li>
-						<a href="#">Login</a>
-					</li>
-					<li>
-						<a href="#">Cardápio</a>
-					</li>
-					<li>
-						<a href="#">Fale Conosco</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="menu-toggle">
-				<i class="fas fa-bars"></i>
-			</div>
-	</header>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.menu-toggle').click(function(){
-				$('nav').toggleClass('active')
-			})
-		})
-	</script>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12">
 
-<slider> 
-    
-    <slide> <p> Açaí 1</p> </slide>
-    <slide> <p> Açaí 2</p> </slide>
-    <slide> <p> Açaí 3</p> </slide>
+				<header>
+					<div class="logo"> <img src="{% static 'img/logo.png' %}" class="paddingImg"> </div>
+					<nav>
+						<ul class="nave">
+							<!-- <li>
+							<a href="#" class="active">Início</a>
+						</li> -->
+						<li>
+							<a href="#">Cadastre-se</a>
+						</li>
+						<li>
+							<a href="#">Login</a>
+						</li>
+						<li>
+							<a href="#">Cardápio</a>
+						</li>
+						<li>
+							<a href="#">Fale Conosco</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="menu-toggle">
+					<i class="fas fa-bars"></i>
+				</div>
+			</header>
+		</div>
+	</div>
+	<!-- ### FINAL DO HEADER ### -->
+	<!-- ### INÍCIO DO SLIDE ### -->
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12">
 
-    
-  </slider>
+			<slider class="sliderPosition">
+				<slide> <p> Açaí 1</p> </slide>
+				<slide> <p> Açaí 2</p> </slide>
+				<slide> <p> Açaí 3</p> </slide>
+			</slider>
 
+		</div>
+	</div>
+	<!-- ### FINAL DO SLIDE ### -->
+	<!-- ### INÍCIO DO FOOTER ### -->
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12">
 
-	<footer class="ct-footer baixar">
-  <div class="container">
-    <ul class="ct-footer-list text-center-sm">
-      <li>
-        <h2 class="ct-footer-list-header">Leia Mais</h2>
-        <ul>
-          <li>
-            <a href="">Company</a>
-          </li>
-          <li>
-            <a href="">Clients</a>
-          </li>
-          <li>
-            <a href="">News</a>
-          </li>
-          <li>
-            <a href="">Careers</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2 class="ct-footer-list-header">Serviços</h2>
-        <ul>
-          <li>
-            <a href="">Design</a>
-          </li>
-          <li>
-            <a href="">Marketing</a>
-          </li>
-          <li>
-            <a href="">Sales</a>
-          </li>
-          <li>
-            <a href="">Programming</a>
-          </li>
-          <li>
-            <a href="">Support</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2 class="ct-footer-list-header">The Industry</h2>
-        <ul>
-          <li>
-            <a href="">Thought Leadership</a>
-          </li>
-          <li>
-            <a href="">Webinars</a>
-          </li>
-          <li>
-            <a href="">Events</a>
-          </li>
-          <li>
-            <a href="">Sponsorships</a>
-          </li>
-          <li>
-            <a href="">Advisors</a>
-          </li>
-          <li>
-            <a href="">Training Program</a>
-          </li>
-          <li>
-            <a href="">Activities & Campaigns</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2 class="ct-footer-list-header">Public Relations</h2>
-        <ul>
-          <li>
-            <a href="">WebCorpCo Blog</a>
-          </li>
-          <li>
-            <a href="">Hackathons</a>
-          </li>
-          <li>
-            <a href="">Videos</a>
-          </li>
-          <li>
-            <a href="">News Releases</a>
-          </li>
-          <li>
-            <a href="">Newsletters</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2 class="ct-footer-list-header">Sobre</h2>
-        <ul>
-          <li>
-            <a href="">FAQ</a>
-          </li>
-          <li>
-            <a href="">Our Board</a>
-          </li>
-          <li>
-            <a href="">Our Staff</a>
-          </li>
-          <li>
-            <a href="">Fale Conosco</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <div class="ct-footer-meta text-center-sm">
-      <div class="row">
-        <div class="col-sm-6 col-md-2">
-          <img alt="logo" src="https://www.solodev.com/assets/footer/logo.png">
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <address>
-            <span>WebCorpCo<br></span>123 Easy Street<br>
-            Orlando, Florida, 32801<br>
-            <span>Phone: <a href="tel:5555555555">(555) 555-8899</a></span>
-          </address>
-        </div>
-        <div class="col-sm-6 col-md-2 ct-u-paddingTop10">
-          <a href="" target="_blank"><img alt="app store" src="https://www.solodev.com/assets/footer/appstore.png"></a>
-        </div>
-        <div class="col-sm-6 col-md-2 ct-u-paddingTop10">
-          <a href="" target="_blank"><img alt="google play store" src="https://www.solodev.com/assets/footer/androidstore.png"></a>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <ul class="ct-socials list-unstyled list-inline">
-            <li>
-              <a href="" target="_blank"><img alt="facebook" src="https://www.solodev.com/assets/footer/facebook-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="twitter" src="https://www.solodev.com/assets/footer/twitter-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="youtube" src="https://www.solodev.com/assets/footer/youtube-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="instagram" src="https://www.solodev.com/assets/footer/instagram-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="pinterest" src="https://www.solodev.com/assets/footer/pinterest-white.png"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="ct-footer-post">
-    <div class="container">
-      <div class="inner-left">
-        <ul>
-          <li>
-            <a href="">FAQ</a>
-          </li>
-          <li>
-            <a href="">News</a>
-          </li>
-          <li>
-            <a href="">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-      <div class="inner-right">
-        <p>Copyright © 2016 WebCorpCo.&nbsp;<a href="">Privacy Policy</a></p>
-        <p><a class="ct-u-motive-color" href="" target="_blank">Web Design</a> by DigitalUs on <a href="" target="_blank">Solodev CMS</a></p>
-      </div>
-    </div>
-  </div>
-</footer>
+			<footer class="ct-footer baixar">
+				<div class="container-fluid">
+					<ul class="ct-footer-list text-center-sm">
+						<li>
+							<h2 class="ct-footer-list-header">Leia Mais</h2>
+							<ul>
+								<li>
+									<a href="">Company</a>
+								</li>
+								<li>
+									<a href="">Clients</a>
+								</li>
+								<li>
+									<a href="">News</a>
+								</li>
+								<li>
+									<a href="">Careers</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="ct-footer-list-header">Serviços</h2>
+							<ul>
+								<li>
+									<a href="">Design</a>
+								</li>
+								<li>
+									<a href="">Marketing</a>
+								</li>
+								<li>
+									<a href="">Sales</a>
+								</li>
+								<li>
+									<a href="">Programming</a>
+								</li>
+								<li>
+									<a href="">Support</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="ct-footer-list-header">The Industry</h2>
+							<ul>
+								<li>
+									<a href="">Thought Leadership</a>
+								</li>
+								<li>
+									<a href="">Webinars</a>
+								</li>
+								<li>
+									<a href="">Events</a>
+								</li>
+								<li>
+									<a href="">Sponsorships</a>
+								</li>
+								<li>
+									<a href="">Advisors</a>
+								</li>
+								<li>
+									<a href="">Training Program</a>
+								</li>
+								<li>
+									<a href="">Activities & Campaigns</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="ct-footer-list-header">Public Relations</h2>
+							<ul>
+								<li>
+									<a href="">WebCorpCo Blog</a>
+								</li>
+								<li>
+									<a href="">Hackathons</a>
+								</li>
+								<li>
+									<a href="">Videos</a>
+								</li>
+								<li>
+									<a href="">News Releases</a>
+								</li>
+								<li>
+									<a href="">Newsletters</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="ct-footer-list-header">Sobre</h2>
+							<ul>
+								<li>
+									<a href="">FAQ</a>
+								</li>
+								<li>
+									<a href="">Our Board</a>
+								</li>
+								<li>
+									<a href="">Our Staff</a>
+								</li>
+								<li>
+									<a href="">Fale Conosco</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="ct-footer-meta text-center-sm">
+						<div class="row">
+							<div class="col-sm-6 col-md-2">
+								<img alt="logo" src="https://www.solodev.com/assets/footer/logo.png">
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<address>
+									<span>WebCorpCo<br></span>123 Easy Street<br>
+									Orlando, Florida, 32801<br>
+									<span>Phone: <a href="tel:5555555555">(555) 555-8899</a></span>
+								</address>
+							</div>
+							<div class="col-sm-6 col-md-2 ct-u-paddingTop10">
+								<a href="" target="_blank"><img alt="app store" src="https://www.solodev.com/assets/footer/appstore.png"></a>
+							</div>
+							<div class="col-sm-6 col-md-2 ct-u-paddingTop10">
+								<a href="" target="_blank"><img alt="google play store" src="https://www.solodev.com/assets/footer/androidstore.png"></a>
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<ul class="ct-socials list-unstyled list-inline">
+									<li>
+										<a href="" target="_blank"><img alt="facebook" src="https://www.solodev.com/assets/footer/facebook-white.png"></a>
+									</li>
+									<li>
+										<a href="" target="_blank"><img alt="twitter" src="https://www.solodev.com/assets/footer/twitter-white.png"></a>
+									</li>
+									<li>
+										<a href="" target="_blank"><img alt="youtube" src="https://www.solodev.com/assets/footer/youtube-white.png"></a>
+									</li>
+									<li>
+										<a href="" target="_blank"><img alt="instagram" src="https://www.solodev.com/assets/footer/instagram-white.png"></a>
+									</li>
+									<li>
+										<a href="" target="_blank"><img alt="pinterest" src="https://www.solodev.com/assets/footer/pinterest-white.png"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ct-footer-post">
+					<div class="container">
+						<div class="inner-left">
+							<ul>
+								<li>
+									<a href="">FAQ</a>
+								</li>
+								<li>
+									<a href="">News</a>
+								</li>
+								<li>
+									<a href="">Contact Us</a>
+								</li>
+							</ul>
+						</div>
+						<div class="inner-right">
+							<p>Copyright © 2016 WebCorpCo.&nbsp;<a href="">Privacy Policy</a></p>
+							<p><a class="ct-u-motive-color" href="" target="_blank">Web Design</a> by DigitalUs on <a href="" target="_blank">Solodev CMS</a></p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.menu-toggle').click(function(){
+		$('nav').toggleClass('active')
+	})
+})
+</script>
 </body>
 </html>
