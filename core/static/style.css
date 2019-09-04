@@ -1,4 +1,4 @@
-html{
+.body{
   margin: 0;
   padding: 0;
   background-color: rgba(190,35,190,0.7);
@@ -543,7 +543,8 @@ address a:hover {
 
 .baixar {
   margin-top: 400px;
-  padding: -10 0px
+  margin-left: -15px;
+  padding: 20px
 }
 
 /* Carrossel */
