@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block conteudo %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="container baixar">
+	<div class="row separador">
+		<div class="col-md-3  col-sm-3">
+			{% if cardapio_listar %}
+			<h1>Gerenciamento de Cardapio</h1>
+			{% endif %}
+
+
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col"><p class="outroTexto2">Cardapio</p></th>
+						<th scope="col"><p class="outroTexto2 direita">Gerenciar</p></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for cardapio in cardapio_listar %}
+					<tr>
+						<th>
+
+							<p><img src="/media/{{ cardapio.foto }}" alt="Imagem" width="200px" height="150px"></a></p>
+							<p class="Cardapio">
+								{{ cardapio.nome }}
+							</p>
+						</th>
+						<td class="direita"><a href="{% url 'cardapio_atualizar' cardapio.id %}" class="pEditar">
+							<button type="button" class="botao">Editar</button></a>
+
+							<a href="{% url 'cardapio_remover' cardapio.id %}" class="pEditar2">
+								<button type="button" class="botao">Excluir</button></a>
+							</td>
+						</tr>
+					</tbody>
+
+					{% empty %}
+
+					<h2 class="outroTexto"> Nenhum cardapio cadastrado </h2>
+
+
+					{% endfor %}
+				</table>
+			</div>
+			<div class="col-md-3 col-lg-3 baixar">
+				<a href="{% url 'cardapio_cadastrar' %}">
+					<p class="botao"><button type="button" class="cadastrar">Cadastrar Cardapio</button></a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+{% endblock conteudo %}	

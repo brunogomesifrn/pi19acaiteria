@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+<h1 class="usuario">Cadastrar cardapio</h1>
+<form method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+
+
+
+<div>
+<p class="baixar3 fonte"> {{form.nome.label}}: {{ form.nome |add_class:"campo"  }}</p>
+<p class="baixar3 fonte"> {{form.preco.label}}: {{ form.preco |add_class:"campo"  }}</p>
+<p class="baixar3 fonte"> {{form.quantidade.label}}: {{ form.quantidade |add_class:"campo"  }}</p>
+<p class="baixar3 fonte"> {{form.descrição.label}}: {{ form.descrição |add_class:"campo"  }}</p>
+<p class="baixar3 fonte"> {{form.foto.label}}: {{form.foto |add_class:"campo"}}</p>
+</div>
+
+<div class="baixar2">
+	<p><button type="submit" class="botao" id="sendMessageButton">Salvar</button></p>
+</div>
+
+<p class="baixar"></p>
+		
+</body>
+</html>
+
+{% endblock conteudo %}	

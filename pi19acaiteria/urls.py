@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from core.views import index
+from core.views import cardapio, cardapio_listar, cardapio_cadastrar, cardapio_atualizar, cardapio_remover
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-]
+
+    #URLs de Areas
+    path('cardapio/', cardapio, name='cardapio'),
+    path('cardapio/', cardapio_listar, name='cardapio'),
+    path('cardapio_cadastrar/', cardapio_cadastrar, name='cardapio_cadastrar'),
+    path('cardapio_atualizar/<int:id>', cardapio_atualizar, name='cardapio_atualizar'),
+    path('cardapio_remover/<int:id>', cardapio_remover, name='cardapio_remover'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

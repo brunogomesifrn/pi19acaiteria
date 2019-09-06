@@ -610,3 +610,34 @@ slide p {
   100% { left: 100%; width: 0%;}
 
 }
+
+.baixar {
+  margin-top: 50px;
+  
+}
+
+.baixar2 {
+  margin-top: 30px
+}
+
+.baixar3 {
+  margin-top: 20px;
+}
+.usuario{
+  text-align: center;
+  color: darkorange;
+  font-weight: bold;
+
+}
+
+.botao {
+  text-align: center;
+  position: relative;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  color: white;
+  background-color: darkorange;
+  font-size: 20px;
+  font-weight: 900
+}
