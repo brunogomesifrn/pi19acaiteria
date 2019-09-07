@@ -50,13 +50,45 @@ def cardapio_remover(request, id):
 	return redirect('cardapio')
 
 def cadastrar_recheio(request):
-	form = CardapioForm(request.POST or None)
+	form = RecheiosForm(request.POST or None)
 	if form.is_valid():
 		form.save()
 		return redirect('cardapio')
-	form = CardapioForm()
+	form = RecheiosForm()
 	contexto = {
 		'form' : form
 	}
 	return render(request, 'cadastro_recheio.html', contexto)
 
+def cadastrar_creme(request):
+	form = CremesForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('cardapio')
+	form = CremesForm()
+	contexto = {
+		'form' : form
+	}
+	return render(request, 'cadastro_creme.html', contexto)
+
+def cadastrar_cobertura(request):
+	form = CoberturasForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('cardapio')
+	form = CoberturasForm()
+	contexto = {
+		'form' : form
+	}
+	return render(request, 'cadastro_cobertura.html', contexto)	
+
+def cadastrar_adicional(request):
+	form = AdicionaisForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('cardapio')
+	form = AdicionaisForm()
+	contexto = {
+		'form' : form
+	}
+	return render(request, 'cadastro_adicional.html', contexto)

@@ -3,8 +3,17 @@
 {% load widget_tweaks %}
 
 {% block conteudo %}
-<body>
+
 <style type="text/css">
+
+.fonte2 {
+	font-family: 'Chilanka';
+	font-size: 25px;
+	font-weight: 600;
+	font-style: italic;
+	color: white;
+	padding-top: 50px;
+}
 
 .botao {
 	text-align: center;
@@ -16,17 +25,7 @@
 	background-color: rgb(20,160,100);
 	font-size: 20px;
 	font-family: 'Chilanka';
-	font-weight: 900;
-}
-
-.fonte2 {
-	font-family: 'Chilanka';
-	font-size: 25px;
-	font-weight: 600;
-	font-style: italic;
-	color: white;
-	padding-top: 50px;
-
+	font-weight: 900
 }
 
 .caixaText {
@@ -36,33 +35,36 @@
 	border-width:medium;
 	text-align: center;
 	color: rgb(20,160,100);
-}	
+}
 
 .caixaText:focus{
 	padding-left: 30px;
 	padding-right: 30px;
 	transition: 0.5s
-}	
+}
+
 
 </style>
 
-<h1 class="fonte">Cadastrar Açaí</h1>
+
+
+<h1 class="fonte">Cadastrar Adicional</h1>
 <form method="post" enctype="multipart/form-data">
 
 {% csrf_token %}
 
-
-<div>
-<p class="fonte2"> Nome: {{ form.nome | add_class:"caixaText"  }}</p>
-<p class="fonte2"> Preço: {{ form.preco |add_class:"caixaText"  }}</p>
-<p class="fonte2"> Quantidade: {{ form.quantidade |add_class:"caixaText"  }}</p>
-<p class="fonte2"> Descrição: {{ form.descrição |add_class:"caixaText"  }}</p>
-<p class="fonte2"> Foto: {{form.foto |add_class:"caixaText"}}</p>
+<div class="center">
+<p class="fonte2"> Nome: {{ form.nome | add_class:"caixaText" }}</p>
+<p class="fonte2"> Preço: {{ form.preco | add_class:"caixaText" }}</p>
+<p class="fonte2"> Foto: {{ form.foto | add_class:"caixaText"}}</p>
 </div>
 
 <div class="">
 	<p><button type="submit" class="botao" id="sendMessageButton">Salvar</button></p>
 </div>
+
+<p class=""></p>
 		
 
-{% endblock conteudo %}	
+
+{% endblock conteudo %}

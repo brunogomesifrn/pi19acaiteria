@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from core.views import index
 from core.views import cardapio, cardapio_listar, cardapio_cadastrar, cardapio_atualizar, cardapio_remover
-from core.views import cadastrar_recheio
+from core.views import cadastrar_recheio, cadastrar_creme, cadastrar_cobertura, cadastrar_adicional
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +32,8 @@ urlpatterns = [
     path('cardapio_atualizar/<int:id>', cardapio_atualizar, name='cardapio_atualizar'),
     path('cardapio_remover/<int:id>', cardapio_remover, name='cardapio_remover'),
     path('cadastrar_recheio/', cadastrar_recheio, name='cadastrar_recheio'),
-
-
+    path('cadastrar_creme/', cadastrar_creme, name='cadastrar_creme'),
+    path('cadastrar_cobertura/', cadastrar_cobertura, name='cadastrar_cobertura'),
+    path('cadastrar_adicional/', cadastrar_adicional, name='cadastrar_adicional'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
