@@ -41,16 +41,16 @@
 							<a href="#" class="active">Início</a>
 						</li> -->
 						<li>
-							<a href="#">Cadastre-se</a>
+							<a class="a" href="#">Cadastre-se</a>
 						</li>
 						<li>
-							<a href="#">Login</a>
+							<a class="a" href="#">Login</a>
 						</li>
 						<li>
-							<a href="{% url 'cardapio' %}">Cardápio</a>
+							<a class="a" href="{% url 'cardapio' %}">Cardápio</a>
 						</li>
 						<li>
-							<a href="#">Fale Conosco</a>
+							<a class="a" href="#">Fale Conosco</a>
 						</li>
 					</ul>
 				</nav>
@@ -64,17 +64,54 @@
 
 	<!-- ### FINAL DO HEADER ### -->
 	<!-- ### INÍCIO DO SLIDE ### -->
+
 	<div class="row">
-		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12">
-
-			<slider class="sliderPosition">
-				<slide> <p> Açaí 1</p> </slide>
-				<slide> <p> Açaí 2</p> </slide>
-				<slide> <p> Açaí 3</p> </slide>
-			</slider>
-
+		<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xg-6">
+			<div class="slider">
+				<img class="slide" name="slide" id="shadow">
+				
+			</div>
 		</div>
+		<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xg-6">
+			<div class="slider">
+				<img class="slide" name="slide2" id="shadow">
+				
+			</div>
+		</div>
+
 	</div>
+
+	<script type="text/javascript">
+		var i = 0;
+		var images = [];
+		var time = 3000;
+
+		images[0] = "{% static 'img/img_01.jpg' %}";
+		images[1] = "{% static 'img/img_02.jpg' %}";
+		images[2] = "{% static 'img/img_03.jpg' %}";
+
+		function mudarImg(){
+			document.slide.src = images[i];
+			if (i < images.length - 1) {
+				i++;
+			} else {
+				i=0;
+			}
+					
+			document.slide2.src = images[i];
+			if (i < images.length - 1) {
+				i++;
+			} else {
+				i=0;
+			}
+
+			setTimeout("mudarImg()", time);
+		}
+
+		window.onload = mudarImg;
+
+	</script>
+	
 	{% endblock conteudo %}
 
 	<!-- ### FINAL DO SLIDE ### -->
