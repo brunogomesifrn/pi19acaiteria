@@ -616,3 +616,12 @@ address a:hover {
   font-size: 20px;
   font-weight: 900
 }
+
+.baixarIndex {
+	margin-top: 500px;
+}
+
+.cor {
+	background-color: rgb(245,245,245);
+	padding: 20px;
+}
