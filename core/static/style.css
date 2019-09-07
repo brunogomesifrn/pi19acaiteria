@@ -563,18 +563,13 @@ address a:hover {
 	margin-top: 50px;
 }
 
-.alinhamento1 { text-align: right; margin-left: 5px}
-.alinhamento2 { text-align: left; margin-right: 35px; padding-right: 15px}
-
 .posicao{
   position: absolute;
 }
 
 .slide {
-	width: 105%;
-	height: 105%;
-  max-height: 350px;
-  max-width: 650px;
+	width: 130%;
+	height: 130%;
 }
 
 #shadow {
@@ -618,10 +613,21 @@ address a:hover {
 }
 
 .baixarIndex {
-	margin-top: 500px;
+	margin-top: 600px;
 }
 
 .cor {
 	background-color: rgb(245,245,245);
-	padding: 20px;
+	padding-top: 55px;
+	padding-bottom: 55px;
+
 }
+
+.fonte {
+	font-family: "Chilanka";
+	color: white;
+	text-align: center;
+	font-weight: 1000;
+}
+
+

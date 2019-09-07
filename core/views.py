@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Cardapio
-from .forms import CardapioForm
+from .models import Cardapio, Recheios, Coberturas, Cremes, Adicionais
+from .forms import CardapioForm, RecheiosForm, CoberturasForm, CremesForm, AdicionaisForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -49,4 +49,14 @@ def cardapio_remover(request, id):
 	cardapio.delete()
 	return redirect('cardapio')
 
+def cadastrar_recheio(request):
+	form = CardapioForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('cardapio')
+	form = CardapioForm()
+	contexto = {
+		'form' : form
+	}
+	return render(request, 'cadastro_recheio.html', contexto)
 
