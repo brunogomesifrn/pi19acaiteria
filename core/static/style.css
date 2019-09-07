@@ -150,6 +150,7 @@ a {
 }
 .ct-footer {
   background-color: rgb(20,160,100);
+  width: 100vw;
   padding-top: 70px;
   margin-top: 20px;
   position: relative;
@@ -562,17 +563,18 @@ address a:hover {
 	margin-top: 50px;
 }
 
-.alinhamento1 { text-align: right; margin-left: 10px}
-.alinhamento2 { text-align: left; margin-right: 10px}
+.alinhamento1 { text-align: right; margin-left: 5px}
+.alinhamento2 { text-align: left; margin-right: 35px; padding-right: 15px}
 
 .posicao{
   position: absolute;
 }
 
 .slide {
-	width: 97%;
-	height: 100%;
-  max-height: 350px
+	width: 105%;
+	height: 105%;
+  max-height: 350px;
+  max-width: 650px;
 }
 
 #shadow {
