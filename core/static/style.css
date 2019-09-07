@@ -12,11 +12,15 @@
 }
 
 .a:hover {
-	text-decoration: none;	
+	text-decoration: none;
+}
+
+.corMenu{
+  background: rgb(20,160,100);
 }
 
 header{
-  position:absolute;
+  /* position:absolute; */
   top: 0;
   left: 0;
   padding: 0 100px;
@@ -553,16 +557,22 @@ address a:hover {
   padding: 20px
 }
 
-/* Carrossel */
-
+/* CARROSSEL */
 .slider {
-	text-align: center;
-	padding: 0; 
+	margin-top: 50px;
+}
+
+.alinhamento1 { text-align: right; margin-left: 10px}
+.alinhamento2 { text-align: left; margin-right: 10px}
+
+.posicao{
+  position: absolute;
 }
 
 .slide {
-	width: 100%;
+	width: 97%;
 	height: 100%;
+  max-height: 350px
 }
 
 #shadow {
@@ -571,13 +581,12 @@ address a:hover {
 	box-shadow: 15px 15px 15px rgb(50,50,50);
 	-webkit-box-shadow: 15px 15px 15px rgb(50,50,50);
 	-moz-box-shadow: 15px 15px 15px rgb(50,50,50);
-
 }
-
+/* FIM CARROSSEL */
 
 .baixar {
-  margin-top: 50px;
-  
+  margin-top: 450px;
+
 }
 
 .baixar2 {
