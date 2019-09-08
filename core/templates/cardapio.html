@@ -28,7 +28,7 @@ ul.circle {
 	border-color: white;
 }
 
-.estilo{
+.estilo1{
 	text-align: center;
 	padding: 10px;
 	background-color: rgb(20,160,100);
@@ -43,11 +43,79 @@ ul.circle {
 	margin-bottom: 5px;
 }
 
+.estilo2{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-left: 656px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.estilo3{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-left: 634px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.estilo4{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-left: 675px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.estilo5{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-left: 645px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
 .estilo:hover{
 	background-color: rgb(20,160,100);
 	font-size: 25px;
 	font-weight: bolder;
 	transition: 0.5s
+}
+
+.descer {
+	margin-top: 90px;
 }
 
 </style>
@@ -57,26 +125,27 @@ ul.circle {
 <h2 class="fonte3"> Categorias </h2>
 
 <ul class="circle">
-	<li class="fonte4 borda"> Açaís <a href="{% url 'cardapio_cadastrar' %}"><button type="button" class="estilo">Cadastrar Açaí</button>
+	<li class="fonte4 borda"> Açaís <a href="{% url 'cardapio_cadastrar' %}"><button type="button" class="estilo1">Cadastrar Açaí</button>
 	</a>
 	</li>
 	
-	<li class="fonte4 borda"> Recheios <a href="{% url 'cadastrar_recheio' %}"><button type="button" class="estilo">Cadastrar Recheio</button>
+	<li class="fonte4 borda"> Recheios <a href="{% url 'cadastrar_recheio' %}"><button type="button" class="estilo2">Cadastrar Recheio</button>
 	</a>
 	</li>
 
-	<li class="fonte4 borda"> Coberturas <a href="{% url 'cadastrar_recheio' %}"><button type="button" class="estilo">Cadastrar Cobertura</button>
+	<li class="fonte4 borda"> Coberturas <a href="{% url 'cadastrar_cobertura' %}"><button type="button" class="estilo3">Cadastrar Cobertura</button>
 	</a>
 	</li>
 	
-	<li class="fonte4 borda"> Cremes <a href="{% url 'cardastrar_recheio' %}"><button type="button" class="estilo">Cadastrar Creme</button>
+	<li class="fonte4 borda"> Cremes <a href="{% url 'cadastrar_creme' %}"><button type="button" class="estilo4">Cadastrar Creme</button>
 	</a></li>
 	
-	<li class="fonte4 borda"> Adicionais <a href="{% url 'cardapio_recheio' %}"><button type="button" class="estilo">Cadastrar Adicionais</button>
+	<li class="fonte4 borda"> Adicionais <a href="{% url 'cadastrar_adicional' %}"><button type="button" class="estilo5">Cadastrar Adicionais</button>
 	</a>
 </li>
 </ul>
 
+<p class="descer"> </p>
 
 
 
