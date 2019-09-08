@@ -17,10 +17,10 @@ def cardapio(request):
 def cardapio_listar(request):
 	cardapio = Cardapio.objects.all()
 	contexto = {
-	    'cardapio_listar': cardapio
-
+	'cardapio_listar': cardapio
 	}
-	return render(request, 'cardapio.html', contexto)
+	
+	return render(request, 'cardapio_lista.html', contexto) 
 
 def cardapio_cadastrar(request):
 	form = CardapioForm(request.POST or None)

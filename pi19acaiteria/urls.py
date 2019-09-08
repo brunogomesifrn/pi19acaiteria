@@ -27,7 +27,7 @@ urlpatterns = [
 
     #URLs de Areas
     path('cardapio/', cardapio, name='cardapio'),
-    path('cardapio/', cardapio_listar, name='cardapio'),
+    path('cardapio_listar/', cardapio_listar, name='cardapio_listar'),
     path('cardapio_cadastrar/', cardapio_cadastrar, name='cardapio_cadastrar'),
     path('cardapio_atualizar/<int:id>', cardapio_atualizar, name='cardapio_atualizar'),
     path('cardapio_remover/<int:id>', cardapio_remover, name='cardapio_remover'),

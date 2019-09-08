@@ -2,71 +2,80 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block conteudo %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<div class="container">
-	<div class="row">
-		<div class="col-md-3  col-sm-3">
-			<h1 class="fonte"> Categorias </h1>
-			{% if cardapio_listar %}
-			<h1>Gerenciamento de Cardapio</h1>
-			{% endif %}
+
+<style type="text/css">
+	
+.fonte3 {
+	font-family: "Chilanka";
+	color: white;
+	font-weight: 1000;
+}
+
+ul.circle {
+	list-style-type:circle;
+
+}
+
+.fonte4 {
+	font-family: "Chilanka";
+	color: white;
+	font-weight: 1000;
+	font-size: 25px;	
+}
+
+.borda{
+	border-bottom: ridge;
+	border-color: white;
+}
+
+.estilo{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-left: 700px;
+	margin-bottom: 5px;
+}
+
+.estilo:hover{
+	background-color: rgb(20,160,100);
+	font-size: 25px;
+	font-weight: bolder;
+	transition: 0.5s
+}
+
+</style>
 
 
-			<table class="table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col"><p class="outroTexto2">Cardapio</p></th>
-						<th scope="col"><p class="outroTexto2 direita">Gerenciar</p></th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for cardapio in cardapio_listar %}
-					<tr>
-						<th>
+<h1 class="fonte"> Cadastro de Produtos </h1>
+<h2 class="fonte3"> Categorias </h2>
 
-							<p><img src="/media/{{ cardapio.foto }}" alt="Imagem" width="200px" height="150px"></p>
-							<p class="Cardapio">
-								{{ cardapio.nome }}
-							</p>
-						</th>
-						<td class="direita"><a href="{% url 'cardapio_atualizar' cardapio.id %}" class="pEditar">
-							<button type="button" class="botao">Editar</button></a>
-
-							<a href="{% url 'cardapio_remover' cardapio.id %}" class="pEditar2"> </a>
-								<button type="button" class="botao">Excluir</button></a>
-							</td>
-						</tr>
-					</tbody>
-
-					{% empty %}
-
-					<h2 class="outroTexto"> Nenhum cardapio cadastrado </h2>
-
-
-					{% endfor %}
-				</table>
-			</div>
-			<div class="col-md-3 col-lg-3 baixar">
-				<a href="{% url 'cardapio_cadastrar' %}">
-					<p class="botao"><button type="button" class="cadastrar">Cadastrar Cardapio</button></a>
-					</p>
-
-				</div>
-			</div>
-		</div>
+<ul class="circle">
+	<li class="fonte4 borda"> Açaís <a href="{% url 'cardapio_cadastrar' %}"><button type="button" class="estilo">Cadastrar Açaí</button>
 	</a>
-</div>
-</div>
-</div>
-</body>
-</html>/
+	</li>
+	
+	<li class="fonte4 borda"> Recheios <a href="{% url 'cadastrar_recheio' %}"><button type="button" class="estilo">Cadastrar Recheio</button>
+	</a>
+	</li>
 
-
+	<li class="fonte4 borda"> Coberturas <a href="{% url 'cadastrar_recheio' %}"><button type="button" class="estilo">Cadastrar Cobertura</button>
+	</a>
+	</li>
+	
+	<li class="fonte4 borda"> Cremes <a href="{% url 'cardastrar_recheio' %}"><button type="button" class="estilo">Cadastrar Creme</button>
+	</a></li>
+	
+	<li class="fonte4 borda"> Adicionais <a href="{% url 'cardapio_recheio' %}"><button type="button" class="estilo">Cadastrar Adicionais</button>
+	</a>
+</li>
+</ul>
 
 
 
