@@ -4,6 +4,9 @@
   background-color: rgba(190,35,190,0.7);
 }
 
+.button:target{
+  padding-bottom: 450px
+}
 
 .nave{
   font-family: "Chilanka", cursive;
