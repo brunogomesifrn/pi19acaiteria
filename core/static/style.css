@@ -11,9 +11,9 @@
   font-size: 3.2vh
 }
 
-.a:hover {
-	text-decoration: none;
-}
+.a:hover {text-decoration: none;}
+.a:visited{ text-decoration: none; color: white}
+.a:focus{ text-decoration: none;}
 
 .corMenu{
   background: rgb(20,160,100);
@@ -552,8 +552,12 @@ address a:hover {
   }
 }
 
+.ajusteRodape{
+  margin-left: -15px
+}
+
 .baixar {
-  margin-top: 400px;
+  margin-top: 300px;
   margin-left: -15px;
   padding: 20px
 }
@@ -583,8 +587,7 @@ address a:hover {
 /* FIM CARROSSEL */
 
 .baixar {
-  margin-top: 450px;
-
+  margin-top: 50px;
 }
 
 .baixar2 {
@@ -613,14 +616,13 @@ address a:hover {
 }
 
 .baixarIndex {
-	margin-top: 500px;
+	margin-top: 465px;
 }
 
 .cor {
 	background-color: rgb(245,245,245);
 	padding-top: 55px;
 	padding-bottom: 55px;
-
 }
 
 .fonte {
