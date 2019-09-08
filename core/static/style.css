@@ -568,8 +568,9 @@ address a:hover {
 }
 
 .slide {
-	width: 130%;
-	height: 130%;
+	width: 97%;
+	height: 100%;
+  max-height: 360px
 }
 
 #shadow {
@@ -597,7 +598,6 @@ address a:hover {
   text-align: center;
   color: darkorange;
   font-weight: bold;
-
 }
 
 .botao {
@@ -613,7 +613,7 @@ address a:hover {
 }
 
 .baixarIndex {
-	margin-top: 600px;
+	margin-top: 500px;
 }
 
 .cor {
@@ -629,5 +629,3 @@ address a:hover {
 	text-align: center;
 	font-weight: 1000;
 }
-
-
