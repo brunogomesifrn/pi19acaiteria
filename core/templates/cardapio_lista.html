@@ -63,72 +63,47 @@ ul.circle {
 	{% endfor %}
 
 </div>
-<div class="row">
-	<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xg-3">
 
-		{% if recheio %}
-		<h1 class="fonte3"> Recheios </h1>
-		{% endif %}
-
-		{% for recheios in recheio %}
-
-		<img src="/media/{{ recheios.foto }}" alt="Imagem" width="150px" height="200px">
-
-		<ul class="circle">
-
-			<li class="fonte4">{{ recheios.nome }}</li>
-
-			<li class="fonte4">
-				<a href="{% url 'recheio_atualizar' recheios.id %}">
-					<button type="button" class="estilo1">Editar</button>
-				</a>
-				<a href="{% url 'recheio_remover' recheios.id %}">
-					<button type="button" class="estilo1">Excluir</button>
-				</a>
-			</li>
-
-		</ul>
-
-		{% empty %}
-
-		<h2 class="fonte3"> Nenhum recheio cadastrado </h2>
-
-		{% endfor %}
-
-	</div>
+{% if recheio %}
+<h1 class="fonte3"> Recheios </h1>
+{% endif %}
+{% for recheios in recheio %}
+<img src="/media/{{ recheios.foto }}" alt="Imagem" width="200px" height="150px">
+<ul class="circle">
+	<li class="fonte4">{{ recheios.nome }}</li>
+	<li class="fonte4">
+		<a href="{% url 'recheio_atualizar' recheios.id %}">
+			<button type="button" class="estilo1">Editar</button>
+		</a>
+		<a href="{% url 'recheio_remover' recheios.id %}">
+			<button type="button" class="estilo1">Excluir</button>
+		</a>
+	</li>
+</ul>
+{% empty %}
+<h2 class="fonte3"> Nenhum recheio cadastrado </h2>
+{% endfor %}
 </div>
 
-<div class="row">
-	<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xg-3">
-
-		{% if creme %}
-		<h1 class="fonte3"> Cremes </h1>
-		{% endif %}
-
-		{% for cremes in creme %}
-
-		<img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
-
-		<ul class="circle">
-
-			<li class="fonte4">{{ cremes.nome }}</li>
-
-			<li class="fonte4"> <a href="{% url 'creme_atualizar' cremes.id %}"><button type="button" class="estilo1">Editar</button>
-			</a> <a href="{% url 'creme_remover' cremes.id %}"><button type="button" class="estilo1">Excluir</button>
-			</a>
-		</li>
-
-	</ul>
-
-	{% empty %}
-
-	<h2 class="fonte3"> Nenhum creme cadastrado </h2>
-
-	{% endfor %}
-
-
-</div>
-</div>
+{% if creme %}
+<h1 class="fonte3"> Cremes </h1>
+{% endif %}
+{% for cremes in creme %}
+<img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
+<ul class="circle">
+	<li class="fonte4">{{ cremes.nome }}</li>
+	<li class="fonte4">
+		<a href="{% url 'creme_atualizar' cremes.id %}">
+			<button type="button" class="estilo1">Editar</button>
+		</a>
+		<a href="{% url 'creme_remover' cremes.id %}">
+			<button type="button" class="estilo1">Excluir</button>
+		</a>
+	</li>
+</ul>
+{% empty %}
+<h2 class="fonte3"> Nenhum creme cadastrado </h2>
+{% endfor %}
 
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xg-3">

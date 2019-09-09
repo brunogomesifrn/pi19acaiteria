@@ -577,7 +577,8 @@ address a:hover {
 .slide {
 	width: 97%;
 	height: 100%;
-  max-height: 360px
+  max-height: 360px;
+  border-radius: 10px
 }
 
 #shadow {
