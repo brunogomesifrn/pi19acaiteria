@@ -5,57 +5,28 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.conf import settings
 
-
-
 def index(request):
 	return render (request, 'index.html')
-
 
 def cardapio(request):
 	return render(request, 'cardapio.html')
 
 def cardapio_listar(request):
 	cardapio = Cardapio.objects.all()
-	contexto = {
-	'cardapio_listar': cardapio
-	}
-	
-	return render(request, 'cardapio_lista.html', contexto)
-
-def recheio_listar(request):
 	recheio = Recheios.objects.all()
-	contexto = {
-	'recheio_listar': recheio
-	}
-	
-	return render(request, 'cardapio_lista.html', contexto) 
-
-def creme_listar(request):
+	cobertura = Coberturas.objects.all()
 	creme = Cremes.objects.all()
+
 	contexto = {
-	'creme_listar': creme
+	#'cardapio_listar': cardapio,
+	'recheio': recheio,
+	'cobertura':cobertura,
+	'creme':creme
 	}
-	
 	return render(request, 'cardapio_lista.html', contexto)
 
-def cobertura_listar(request):
-	cobertura = Coberturas.objects.all()
-	contexto = {
-	'cobertura_listar': cobertura
-	}
-
-	return render(request, 'cardapio_lista.html', contexto)	 
-
-def adicional_listar(request):
-	adicional = Adicionais.objects.all()
-	contexto = {
-	'adicional_listar': adicional
-	}
-
-	return render(request, 'cardapio_lista.html', contexto)	 			 
 
 #cruds de açaís
-
 def cardapio_cadastrar(request):
 	form = CardapioForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
@@ -76,14 +47,14 @@ def cardapio_atualizar(request, id):
 	contexto = {
 	    'form': form
 	}
-	return render(request, 'cadastro_cardapio.html', contexto)	
+	return render(request, 'cadastro_cardapio.html', contexto)
 
 def cardapio_remover(request, id):
 	cardapio = Cardapio.objects.get(pk=id)
 	cardapio.delete()
 	return redirect('cardapio_listar')
 
-#cruds de recheio	
+#cruds de recheio
 
 def cadastrar_recheio(request):
 	form = RecheiosForm(request.POST or None, request.FILES or None)
@@ -110,7 +81,7 @@ def recheio_atualizar(request, id):
 def recheio_remover(request, id):
 	recheio = Recheios.objects.get(pk=id)
 	recheio.delete()
-	return redirect('cardapio_listar')	
+	return redirect('cardapio_listar')
 
 #cruds de creme
 
@@ -134,12 +105,12 @@ def creme_atualizar(request, id):
 	contexto = {
 	    'form': form
 	}
-	return render(request, 'cadastro_recheio.html', contexto)	
+	return render(request, 'cadastro_recheio.html', contexto)
 
 def creme_remover(request, id):
 	creme = Cremes.objects.get(pk=id)
 	creme.delete()
-	return redirect('cardapio_listar')	
+	return redirect('cardapio_listar')
 
 
 #crud de cobertura
@@ -153,7 +124,7 @@ def cadastrar_cobertura(request):
 	contexto = {
 		'form' : form
 	}
-	return render(request, 'cadastro_cobertura.html', contexto)	
+	return render(request, 'cadastro_cobertura.html', contexto)
 
 def cobertura_atualizar(request, id):
 	form = Coberturas.objects.get(pk=id)
@@ -164,12 +135,12 @@ def cobertura_atualizar(request, id):
 	contexto = {
 	    'form': form
 	}
-	return render(request, 'cadastro_cobertura.html', contexto)	
+	return render(request, 'cadastro_cobertura.html', contexto)
 
 def cobertura_remover(request, id):
 	cobertura = Coberturas.objects.get(pk=id)
 	cobertura.delete()
-	return redirect('cardapio_listar')	
+	return redirect('cardapio_listar')
 
 #crud de adicional
 
@@ -193,9 +164,9 @@ def adicional_atualizar(request, id):
 	contexto = {
 	    'form': form
 	}
-	return render(request, 'cadastro_cobertura.html', contexto)	
+	return render(request, 'cadastro_cobertura.html', contexto)
 
 def adicional_remover(request, id):
 	adicional = Adicionais.objects.get(pk=id)
 	adicional.delete()
-	return redirect('cardapio_listar')	
+	return redirect('cardapio_listar')

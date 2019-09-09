@@ -4,7 +4,7 @@
 {% block conteudo %}
 
 <style type="text/css">
-	
+
 .fonte3 {
 	font-family: "Chilanka";
 	color: white;
@@ -20,11 +20,11 @@ ul.circle {
 	font-family: "Chilanka";
 	color: white;
 	font-weight: 1000;
-	font-size: 20px;	
+	font-size: 20px;
 }
 
 .margin {
-	margin-top: 400px; 
+	margin-top: 400px;
 }
 
 </style>
@@ -44,108 +44,112 @@ ul.circle {
 		<img src="/media/{{ cardapio.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
-		
-		<li class="fonte4">{{ cardapio.nome }}</li>
-		
-		<li class="fonte4">{{ cardapio.preco }} <a href="{% url 'cardapio_atualizar' cardapio.id %}"><button type="button" class="estilo1">Editar</button>
-		</a> <a href="{% url 'cardapio_remover' cardapio.id %}"><button type="button" class="estilo1">Excluir</button>
-		</a>
+
+			<li class="fonte4">{{ cardapio.nome }}</li>
+
+			<li class="fonte4">{{ cardapio.preco }} <a href="{% url 'cardapio_atualizar' cardapio.id %}"><button type="button" class="estilo1">Editar</button>
+			</a> <a href="{% url 'cardapio_remover' cardapio.id %}"><button type="button" class="estilo1">Excluir</button>
+			</a>
 		</li>
-		
+
 		<li class="fonte4">{{ cardapio.quantidade }}</li>
 		<li class="fonte4">{{ cardapio.descrição }}</li>
-		</ul>
+	</ul>
 
-		{% empty %}
+	{% empty %}
 
-		<h2 class="fonte3"> Nenhum açaí cadastrado </h2>
+	<h2 class="fonte3"> Nenhum açaí cadastrado </h2>
 
-		{% endfor %}
+	{% endfor %}
 
-		</div>
+</div>
 
-		{% if recheio_listar %}
-		<h1 class="fonte3"> Recheios </h1>
-		{% endif %}
+{% if recheio %}
+<h1 class="fonte3"> Recheios </h1>
+{% endif %}
 
-		{% for recheio in recheio_listar %}
+{% for recheios in recheio %}
 
-		<img src="/recheio/{{ recheio.foto }}" alt="Imagem" width="150px" height="200px">
+<img src="/recheio/{{ recheios.foto }}" alt="Imagem" width="150px" height="200px">
 
-		<ul class="circle">
-		
-		<li class="fonte4">{{ recheio.nome }}</li>
-		
-		<li class="fonte4"><a href="{% url 'recheio_atualizar' recheio.id %}"><button type="button" class="estilo1">Editar</button>
-		</a> <a href="{% url 'recheio_remover' recheio.id %}"><button type="button" class="estilo1">Excluir</button>
+<ul class="circle">
+
+	<li class="fonte4">{{ recheio.nome }}</li>
+
+	<li class="fonte4">
+		<a href="{% url 'recheio_atualizar' recheios.id %}">
+			<button type="button" class="estilo1">Editar</button>
 		</a>
-		</li>
-		
-		</ul>
-
-		{% empty %}
-
-		<h2 class="fonte3"> Nenhum recheio cadastrado </h2>
-
-		{% endfor %}
-
-
-
-		{% if creme_listar %}
-		<h1 class="fonte3"> Cremes </h1>
-		{% endif %}
-
-		{% for creme in creme_listar %}
-
-		<img src="/media/{{ creme.foto }}" alt="Imagem" width="150px" height="200px">
-
-		<ul class="circle">
-		
-		<li class="fonte4">{{ creme.nome }}</li>
-		
-		<li class="fonte4"> <a href="{% url 'creme_atualizar' creme.id %}"><button type="button" class="estilo1">Editar</button>
-		</a> <a href="{% url 'creme_remover' creme.id %}"><button type="button" class="estilo1">Excluir</button>
+		<a href="{% url 'recheio_remover' recheios.id %}">
+			<button type="button" class="estilo1">Excluir</button>
 		</a>
-		</li>
-	
-		</ul>
+	</li>
 
-		{% empty %}
+</ul>
 
-		<h2 class="fonte3"> Nenhum creme cadastrado </h2>
+{% empty %}
 
-		{% endfor %}
+<h2 class="fonte3"> Nenhum recheio cadastrado </h2>
 
-	
+{% endfor %}
+
+
+
+{% if creme %}
+<h1 class="fonte3"> Cremes <br><br><br><br><br><br> </h1>
+{% endif %}
+
+{% for cremes in creme %}
+
+<img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
+
+<ul class="circle">
+
+	<li class="fonte4">{{ creme.nome }}</li>
+
+	<li class="fonte4"> <a href="{% url 'creme_atualizar' cremes.id %}"><button type="button" class="estilo1">Editar</button>
+	</a> <a href="{% url 'creme_remover' cremes.id %}"><button type="button" class="estilo1">Excluir</button>
+	</a>
+</li>
+
+</ul>
+
+{% empty %}
+
+<h2 class="fonte3"> Nenhum creme cadastrado </h2>
+
+{% endfor %}
+
+
 </div>
 
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
-		{% if cobertura_listar %}
+		{% if cobertura %}
 		<h1 class="fonte3"> Açaís </h1>
 		{% endif %}
 
-		{% for cobertura in cobertura_listar %}
+		{% for coberturas in cobertura %}
 
-		<img src="/media/{{ cobertura.foto }}" alt="Imagem" width="150px" height="200px">
+		<img src="/media/{{ coberturas.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
-		
-		<li class="fonte4">{{ cobertura.nome }}</li>
-		
-		<li class="fonte4"><a href="{% url 'cobertura_atualizar' cobertura.id %}"><button type="button" class="estilo1">Editar</button>
-		</a> <a href="{% url 'cobertura_remover' cobertura.id %}"><button type="button" class="estilo1">Excluir</button>
-		</a>
+
+			<li class="fonte4">{{ coberturas.nome }}</li>
+
+			<li class="fonte4"><a href="{% url 'cobertura_atualizar' coberturas.id %}"><button type="button" class="estilo1">Editar</button>
+			</a> <a href="{% url 'cobertura_remover' coberturas.id %}"><button type="button" class="estilo1">Excluir</button>
+			</a>
 		</li>
-		</ul>
+	</ul>
 
-		{% empty %}
+	{% empty %}
 
-		<h2 class="fonte3"> Nenhuma cobertura cadastrada </h2>
+	<h2 class="fonte3"> Nenhuma cobertura cadastrada </h2>
 
-		{% endfor %}
+	{% endfor %}
 
-	</div>
+</div>
 </div>
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
@@ -158,24 +162,24 @@ ul.circle {
 		<img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
-		
-		<li class="fonte4">{{ adicional.nome }}</li>
-		
-		<li class="fonte4"><a href="{% url 'cobertura_atualizar' cobertura.id %}"><button type="button" class="estilo1">Editar</button>
-		</a> <a href="{% url 'cobertura_remover' cobertura.id %}"><button type="button" class="estilo1">Excluir</button>
-		</a>
+
+			<li class="fonte4">{{ adicional.nome }}</li>
+
+			<li class="fonte4"><a href="{% url 'cobertura_atualizar' cobertura.id %}"><button type="button" class="estilo1">Editar</button>
+			</a> <a href="{% url 'cobertura_remover' cobertura.id %}"><button type="button" class="estilo1">Excluir</button>
+			</a>
 		</li>
 		<li class="fonte4">{{ adicional.preco }}</li>
-		</ul>
+	</ul>
 
-		{% empty %}
+	{% empty %}
 
-		<h2 class="fonte3"> Nenhum adicional cadastrado </h2>
+	<h2 class="fonte3"> Nenhum adicional cadastrado </h2>
 
-		{% endfor %}
+	{% endfor %}
 </div>
 
 <p class="margin"></p>
 
 
-{% endblock conteudo %}	
+{% endblock conteudo %}
