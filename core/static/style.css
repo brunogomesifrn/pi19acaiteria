@@ -634,3 +634,21 @@ address a:hover {
 	text-align: center;
 	font-weight: 1000;
 }
+
+.baixarIndex2 {
+  margin-top: 100px;
+}
+
+ul.circle {
+  list-style-type:circle;
+
+}
+
+.letra {
+  font-family: "Chilanka";
+  font-size: 25px;
+  color: rgb(20,160,100);
+  font-weight: 900;
+  margin-left: 50px;
+  margin-top: 15px;
+}
