@@ -20,7 +20,8 @@ from django.conf.urls.static import static
 from core.views import index
 from core.views import cardapio, cardapio_listar, cardapio_cadastrar, cardapio_atualizar, cardapio_remover
 from core.views import cadastrar_recheio, cadastrar_creme, cadastrar_cobertura, cadastrar_adicional, recheio_atualizar
-from core.views import recheio_listar, recheio_remover, creme_atualizar, creme_remover
+from core.views import recheio_listar, recheio_remover, creme_atualizar, creme_remover, cobertura_atualizar
+from core.views import cobertura_remover, adicional_atualizar, adicional_remover
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,6 +41,10 @@ urlpatterns = [
     path('creme_atualizar/<int:id>', creme_atualizar, name='creme_atualizar'),
     path('creme_remover/<int:id>', creme_remover, name='creme_remover'),
     path('cadastrar_cobertura/', cadastrar_cobertura, name='cadastrar_cobertura'),
+    path('cobertura_atualizar/<int:id>', cobertura_atualizar, name='cobertura_atualizar'),
+    path('cobertura_remover/<int:id>', cobertura_remover, name='cobertura_remover'),
     path('cadastrar_adicional/', cadastrar_adicional, name='cadastrar_adicional'),
+    path('adicional_atualizar/<int:id>', adicional_atualizar, name='adicional_atualizar'),
+    path('adicional_remover/<int:id>', cobertura_remover, name='adicional_remover'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

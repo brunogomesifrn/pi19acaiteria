@@ -62,7 +62,7 @@ ul.circle {
 
 		{% endfor %}
 
-
+		</div>
 
 		{% if recheio_listar %}
 		<h1 class="fonte3"> Recheios </h1>
@@ -116,13 +116,63 @@ ul.circle {
 
 		{% endfor %}
 
-	</div>
+	
 </div>
 
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
+		{% if cobertura_listar %}
+		<h1 class="fonte3"> Açaís </h1>
+		{% endif %}
+
+		{% for cobertura in cobertura_listar %}
+
+		<img src="/media/{{ cobertura.foto }}" alt="Imagem" width="150px" height="200px">
+
+		<ul class="circle">
 		
+		<li class="fonte4">{{ cobertura.nome }}</li>
+		
+		<li class="fonte4"><a href="{% url 'cobertura_atualizar' cobertura.id %}"><button type="button" class="estilo1">Editar</button>
+		</a> <a href="{% url 'cobertura_remover' cobertura.id %}"><button type="button" class="estilo1">Excluir</button>
+		</a>
+		</li>
+		</ul>
+
+		{% empty %}
+
+		<h2 class="fonte3"> Nenhuma cobertura cadastrada </h2>
+
+		{% endfor %}
+
 	</div>
+</div>
+<div class="row">
+	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
+		{% if adicional_listar %}
+		<h1 class="fonte3"> Adicional </h1>
+		{% endif %}
+
+		{% for adicional in adicional_listar %}
+
+		<img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
+
+		<ul class="circle">
+		
+		<li class="fonte4">{{ adicional.nome }}</li>
+		
+		<li class="fonte4"><a href="{% url 'cobertura_atualizar' cobertura.id %}"><button type="button" class="estilo1">Editar</button>
+		</a> <a href="{% url 'cobertura_remover' cobertura.id %}"><button type="button" class="estilo1">Excluir</button>
+		</a>
+		</li>
+		<li class="fonte4">{{ adicional.preco }}</li>
+		</ul>
+
+		{% empty %}
+
+		<h2 class="fonte3"> Nenhum adicional cadastrado </h2>
+
+		{% endfor %}
 </div>
 
 <p class="margin"></p>

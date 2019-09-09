@@ -33,10 +33,26 @@ def recheio_listar(request):
 def creme_listar(request):
 	creme = Cremes.objects.all()
 	contexto = {
-	'creme_listar': recheio
+	'creme_listar': creme
 	}
 	
-	return render(request, 'cardapio_lista.html', contexto) 		 
+	return render(request, 'cardapio_lista.html', contexto)
+
+def cobertura_listar(request):
+	cobertura = Coberturas.objects.all()
+	contexto = {
+	'cobertura_listar': cobertura
+	}
+
+	return render(request, 'cardapio_lista.html', contexto)	 
+
+def adicional_listar(request):
+	adicional = Adicionais.objects.all()
+	contexto = {
+	'adicional_listar': adicional
+	}
+
+	return render(request, 'cardapio_lista.html', contexto)	 			 
 
 #cruds de açaís
 
@@ -132,12 +148,28 @@ def cadastrar_cobertura(request):
 	form = CoberturasForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
-		return redirect('cardapio')
-	form = CoberturasForm()
+		return redirect('cardapio_listar')
+	form = CoberturasForm ()
 	contexto = {
 		'form' : form
 	}
 	return render(request, 'cadastro_cobertura.html', contexto)	
+
+def cobertura_atualizar(request, id):
+	form = Coberturas.objects.get(pk=id)
+	form = CoberturasForm(request.POST or None, instance=form)
+	if form.is_valid():
+		form.save()
+		return redirect('cardapio_listar')
+	contexto = {
+	    'form': form
+	}
+	return render(request, 'cadastro_cobertura.html', contexto)	
+
+def cobertura_remover(request, id):
+	cobertura = Coberturas.objects.get(pk=id)
+	cobertura.delete()
+	return redirect('cardapio_listar')	
 
 #crud de adicional
 
@@ -145,9 +177,25 @@ def cadastrar_adicional(request):
 	form = AdicionaisForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
-		return redirect('cardapio')
+		return redirect('cardapio_listar')
 	form = AdicionaisForm()
 	contexto = {
 		'form' : form
 	}
 	return render(request, 'cadastro_adicional.html', contexto)
+
+def adicional_atualizar(request, id):
+	form = Adicionais.objects.get(pk=id)
+	form = AdicionaisForm(request.POST or None, instance=form)
+	if form.is_valid():
+		form.save()
+		return redirect('cardapio_listar')
+	contexto = {
+	    'form': form
+	}
+	return render(request, 'cadastro_cobertura.html', contexto)	
+
+def adicional_remover(request, id):
+	adicional = Adicionais.objects.get(pk=id)
+	adicional.delete()
+	return redirect('cardapio_listar')	
