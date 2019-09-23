@@ -33,6 +33,8 @@ ul.circle {
 
 <h1 class="fonte"> Produtos Cadastrados </h1>
 
+<!-- INÍCIO DA LISTAGEM DE AÇAÍS -->
+
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4">
 		{% if cardapio_listar %}
@@ -64,6 +66,9 @@ ul.circle {
 
 </div>
 
+
+<!-- INÍCIO DA LISTAGEM DE RECHEIOS -->
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4">
 {% if recheio %}
 <h1 class="fonte3"> Recheios </h1>
 {% endif %}
@@ -85,6 +90,8 @@ ul.circle {
 {% endfor %}
 </div>
 
+<!-- INÍCIO DA LISTAGEM DE CREMES -->
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4">
 {% if creme %}
 <h1 class="fonte3"> Cremes </h1>
 {% endif %}
@@ -104,9 +111,13 @@ ul.circle {
 {% empty %}
 <h2 class="fonte3"> Nenhum creme cadastrado </h2>
 {% endfor %}
+</div>
+</div>
+
+<!-- INÍCIO DA LISTAGEM DE COBERTURAS -->
 
 <div class="row">
-	<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xg-3">
+	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
 		{% if cobertura %}
 		<h1 class="fonte3"> Açaís </h1>
 		{% endif %}
@@ -132,14 +143,16 @@ ul.circle {
 	{% endfor %}
 
 </div>
-</div>
-<div class="row">
+
+
+<!-- INÍCIO DA LISTAGEM DE ADICIONAIS -->
+
 	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
-		{% if adicional_listar %}
+		{% if adicional %}
 		<h1 class="fonte3"> Adicional </h1>
 		{% endif %}
 
-		{% for adicional in adicional_listar %}
+		{% for adicional in adicional %}
 
 		<img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
 
@@ -147,8 +160,8 @@ ul.circle {
 
 			<li class="fonte4">{{ adicional.nome }}</li>
 
-			<li class="fonte4"><a href="{% url 'cobertura_atualizar' cobertura.id %}"><button type="button" class="estilo1">Editar</button>
-			</a> <a href="{% url 'cobertura_remover' cobertura.id %}"><button type="button" class="estilo1">Excluir</button>
+			<li class="fonte4"><a href="{% url 'adicional_atualizar' adicional.id %}"><button type="button" class="estilo1">Editar</button>
+			</a> <a href="{% url 'adicional_remover' adicional.id %}"><button type="button" class="estilo1">Excluir</button>
 			</a>
 		</li>
 		<li class="fonte4">{{ adicional.preco }}</li>
@@ -160,6 +173,8 @@ ul.circle {
 
 	{% endfor %}
 </div>
+</div>
+
 
 <p class="margin"></p>
 

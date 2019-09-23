@@ -16,12 +16,14 @@ def cardapio_listar(request):
 	recheio = Recheios.objects.all()
 	cobertura = Coberturas.objects.all()
 	creme = Cremes.objects.all()
+	adicional = Adicionais.objects.all()
 
 	contexto = {
-	#'cardapio_listar': cardapio,
+	'cardapio_listar': cardapio,
 	'recheio': recheio,
 	'cobertura':cobertura,
-	'creme':creme
+	'creme':creme,
+	'adicional': adicional
 	}
 	return render(request, 'cardapio_lista.html', contexto)
 
@@ -164,7 +166,7 @@ def adicional_atualizar(request, id):
 	contexto = {
 	    'form': form
 	}
-	return render(request, 'cadastro_cobertura.html', contexto)
+	return render(request, 'cadastro_adicional.html', contexto)
 
 def adicional_remover(request, id):
 	adicional = Adicionais.objects.get(pk=id)

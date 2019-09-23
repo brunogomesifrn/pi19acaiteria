@@ -24,26 +24,36 @@ from core.views import recheio_remover, creme_atualizar, creme_remover, cobertur
 from core.views import cobertura_remover, adicional_atualizar, adicional_remover
 
 urlpatterns = [
+
+    #URLs de Index
     path('admin/', admin.site.urls),
     path('', index, name='index'),
 
-    #URLs de Areas
+    #URLs de Cardapio
     path('cardapio/', cardapio, name='cardapio'),
     path('cardapio_listar/', cardapio_listar, name='cardapio_listar'),
     path('cardapio_cadastrar/', cardapio_cadastrar, name='cardapio_cadastrar'),
     path('cardapio_atualizar/<int:id>', cardapio_atualizar, name='cardapio_atualizar'),
     path('cardapio_remover/<int:id>', cardapio_remover, name='cardapio_remover'),
+
+    #URLs de Recheio
     path('cadastrar_recheio/', cadastrar_recheio, name='cadastrar_recheio'),
     path('recheio_atualizar/<int:id>', recheio_atualizar, name='recheio_atualizar'),
     path('recheio_remover/<int:id>', recheio_remover, name='recheio_remover'),
+
+    #URLs de Creme
     path('cadastrar_creme/', cadastrar_creme, name='cadastrar_creme'),
     path('creme_atualizar/<int:id>', creme_atualizar, name='creme_atualizar'),
     path('creme_remover/<int:id>', creme_remover, name='creme_remover'),
+
+    #URLs de Cobertura
     path('cadastrar_cobertura/', cadastrar_cobertura, name='cadastrar_cobertura'),
     path('cobertura_atualizar/<int:id>', cobertura_atualizar, name='cobertura_atualizar'),
     path('cobertura_remover/<int:id>', cobertura_remover, name='cobertura_remover'),
+
+    #URLs de Adicional
     path('cadastrar_adicional/', cadastrar_adicional, name='cadastrar_adicional'),
     path('adicional_atualizar/<int:id>', adicional_atualizar, name='adicional_atualizar'),
-    path('adicional_remover/<int:id>', cobertura_remover, name='adicional_remover'),
+    path('adicional_remover/<int:id>', adicional_remover, name='adicional_remover'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
