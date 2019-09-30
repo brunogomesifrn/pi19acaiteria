@@ -27,6 +27,75 @@ ul.circle {
 	margin-top: 400px;
 }
 
+.centralizar {
+	float: left;
+	margin: 5px 30px 20px 0px;
+
+}
+
+.centralizar2 {
+	margin-top: 35px
+}
+
+.centralizar3 {
+	float: right;
+}
+
+.estilo1{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-bottom: 5px;
+	margin-left: 40px
+}
+
+.estilo1:hover{
+	background-color: rgb(20,160,100);
+	font-size: 25px;
+	font-weight: bolder;
+	transition: 0.5s
+}
+
+.estilo2:hover{
+	background-color: rgb(20,160,100);
+	font-size: 25px;
+	font-weight: bolder;
+	transition: 0.5s
+}
+
+.estilo2{
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(20,160,100);
+	border: double;
+	border-radius: 20px;
+	font-family: "Chilanka";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	transition: 0.5s;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.fonte4 {
+	font-family: "Chilanka";
+	color: white;
+	font-weight: 1000;
+	font-size: 25px;	
+}
+
+.distancia {
+	margin-left: 90px
+}
+
 </style>
 
 
@@ -36,18 +105,18 @@ ul.circle {
 <!-- INÍCIO DA LISTAGEM DE AÇAÍS -->
 
 <div class="row">
-	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4">
+	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4 centralizar">
 		{% if cardapio_listar %}
 		<h1 class="fonte3"> Açaís </h1>
 		{% endif %}
 
 		{% for cardapio in cardapio_listar %}
 
-		<img src="/media/{{ cardapio.foto }}" alt="Imagem" width="150px" height="200px">
+		<p class="centralizar"><img src="/media/{{ cardapio.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
 
-			<li class="fonte4">{{ cardapio.nome }}</li>
+			<li class="fonte4 centralizar2">{{ cardapio.nome }}</li>
 
 			<li class="fonte4">{{ cardapio.preco }} <a href="{% url 'cardapio_atualizar' cardapio.id %}"><button type="button" class="estilo1">Editar</button>
 			</a> <a href="{% url 'cardapio_remover' cardapio.id %}"><button type="button" class="estilo1">Excluir</button>
@@ -57,6 +126,7 @@ ul.circle {
 		<li class="fonte4">{{ cardapio.quantidade }}</li>
 		<li class="fonte4">{{ cardapio.descrição }}</li>
 	</ul>
+	</p>
 
 	{% empty %}
 
@@ -68,14 +138,14 @@ ul.circle {
 
 
 <!-- INÍCIO DA LISTAGEM DE RECHEIOS -->
-<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4">
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4 centralizar3 distancia">
 {% if recheio %}
 <h1 class="fonte3"> Recheios </h1>
 {% endif %}
 {% for recheios in recheio %}
-<img src="/media/{{ recheios.foto }}" alt="Imagem" width="200px" height="150px">
+<p class="centralizar"><img src="/media/{{ recheios.foto }}" alt="Imagem" width="200px" height="150px">
 <ul class="circle">
-	<li class="fonte4">{{ recheios.nome }}</li>
+	<li class="fonte4 centralizar2">{{ recheios.nome }}</li>
 	<li class="fonte4">
 		<a href="{% url 'recheio_atualizar' recheios.id %}">
 			<button type="button" class="estilo1">Editar</button>
@@ -85,6 +155,7 @@ ul.circle {
 		</a>
 	</li>
 </ul>
+</p>
 {% empty %}
 <h2 class="fonte3"> Nenhum recheio cadastrado </h2>
 {% endfor %}
@@ -96,7 +167,7 @@ ul.circle {
 <h1 class="fonte3"> Cremes </h1>
 {% endif %}
 {% for cremes in creme %}
-<img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
+<p class="centralizar"><img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
 <ul class="circle">
 	<li class="fonte4">{{ cremes.nome }}</li>
 	<li class="fonte4">
@@ -108,6 +179,7 @@ ul.circle {
 		</a>
 	</li>
 </ul>
+</p>
 {% empty %}
 <h2 class="fonte3"> Nenhum creme cadastrado </h2>
 {% endfor %}
@@ -124,7 +196,7 @@ ul.circle {
 
 		{% for coberturas in cobertura %}
 
-		<img src="/media/{{ coberturas.foto }}" alt="Imagem" width="150px" height="200px">
+		<p class="centralizar"><img src="/media/{{ coberturas.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
 
@@ -135,6 +207,7 @@ ul.circle {
 			</a>
 		</li>
 	</ul>
+	</p>
 
 	{% empty %}
 
@@ -149,12 +222,12 @@ ul.circle {
 
 	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
 		{% if adicional %}
-		<h1 class="fonte3"> Adicional </h1>
+		<h1 class="fonte3"> Adicionais </h1>
 		{% endif %}
 
 		{% for adicional in adicional %}
 
-		<img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
+		<p class="centralizar"><img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
 
@@ -166,6 +239,7 @@ ul.circle {
 		</li>
 		<li class="fonte4">{{ adicional.preco }}</li>
 	</ul>
+	</p>
 
 	{% empty %}
 
