@@ -9,6 +9,8 @@
 	font-family: "Chilanka";
 	color: white;
 	font-weight: 1000;
+	font-size: 25px;
+	text-align: center;
 }
 
 ul.circle {
@@ -96,6 +98,29 @@ ul.circle {
 	margin-left: 90px
 }
 
+#customers {
+  font-family: "Chilanka";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: rgb(20,160,100);}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
 </style>
 
 
@@ -105,13 +130,22 @@ ul.circle {
 <!-- INÍCIO DA LISTAGEM DE AÇAÍS -->
 
 <div class="row">
-	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4 centralizar">
-		{% if cardapio_listar %}
-		<h1 class="fonte3"> Açaís </h1>
-		{% endif %}
+	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12 centralizar">
+		
+		<table id="customers">
+			<tr>
+			<th class="fonte3"> <p class="fonte3">Açaís</p> </th>
+			<th class="fonte3"> <p class="fonte3">Recheios</p> </th>
+			<th class="fonte3"> <p class="fonte3">Cremes</p> </th>
+			<th class="fonte3"> <p class="fonte3">Coberturas</p> </th>
+			<th class="fonte3"> <p class="fonte3">Adicionais</p> </th>
+			</tr>
+
+			
 
 		{% for cardapio in cardapio_listar %}
-
+		<tr>
+				<td>
 		<p class="centralizar"><img src="/media/{{ cardapio.foto }}" alt="Imagem" width="150px" height="200px">
 
 		<ul class="circle">
@@ -128,21 +162,28 @@ ul.circle {
 	</ul>
 	</p>
 
+	</td>
+
 	{% empty %}
-
-	<h2 class="fonte3"> Nenhum açaí cadastrado </h2>
-
+<tr>
+	<td class="fonte3"> Nenhum açaí cadastrado </td>
+</tr>
 	{% endfor %}
+	
 
-</div>
+
 
 
 <!-- INÍCIO DA LISTAGEM DE RECHEIOS -->
-<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4 centralizar3 distancia">
+
+	
 {% if recheio %}
-<h1 class="fonte3"> Recheios </h1>
+
 {% endif %}
 {% for recheios in recheio %}
+
+
+<td>
 <p class="centralizar"><img src="/media/{{ recheios.foto }}" alt="Imagem" width="200px" height="150px">
 <ul class="circle">
 	<li class="fonte4 centralizar2">{{ recheios.nome }}</li>
@@ -156,17 +197,27 @@ ul.circle {
 	</li>
 </ul>
 </p>
+</td>
+
 {% empty %}
-<h2 class="fonte3"> Nenhum recheio cadastrado </h2>
+<tr>
+<td class="fonte3"> Nenhum recheio cadastrado </td>
+</tr>
 {% endfor %}
-</div>
+	
+
 
 <!-- INÍCIO DA LISTAGEM DE CREMES -->
-<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4">
+
+
+	
+
 {% if creme %}
-<h1 class="fonte3"> Cremes </h1>
+
 {% endif %}
 {% for cremes in creme %}
+
+<td>
 <p class="centralizar"><img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
 <ul class="circle">
 	<li class="fonte4">{{ cremes.nome }}</li>
@@ -180,21 +231,28 @@ ul.circle {
 	</li>
 </ul>
 </p>
+</td>
+
 {% empty %}
-<h2 class="fonte3"> Nenhum creme cadastrado </h2>
+<tr>
+<td class="fonte3"> Nenhum creme cadastrado </td>
+</tr>
 {% endfor %}
-</div>
-</div>
+
+	
+
 
 <!-- INÍCIO DA LISTAGEM DE COBERTURAS -->
 
-<div class="row">
-	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
+	
+		
 		{% if cobertura %}
-		<h1 class="fonte3"> Açaís </h1>
+		
 		{% endif %}
 
 		{% for coberturas in cobertura %}
+		
+		<td>
 
 		<p class="centralizar"><img src="/media/{{ coberturas.foto }}" alt="Imagem" width="150px" height="200px">
 
@@ -208,24 +266,30 @@ ul.circle {
 		</li>
 	</ul>
 	</p>
+	</td>
+	
 
 	{% empty %}
-
-	<h2 class="fonte3"> Nenhuma cobertura cadastrada </h2>
-
+	<tr>
+	<td class="fonte3"> Nenhuma cobertura cadastrada </td>
+	</tr>
 	{% endfor %}
 
-</div>
+
+
 
 
 <!-- INÍCIO DA LISTAGEM DE ADICIONAIS -->
 
-	<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6">
+	
+		
 		{% if adicional %}
-		<h1 class="fonte3"> Adicionais </h1>
+		
 		{% endif %}
 
 		{% for adicional in adicional %}
+		
+		<td>
 
 		<p class="centralizar"><img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
 
@@ -240,15 +304,20 @@ ul.circle {
 		<li class="fonte4">{{ adicional.preco }}</li>
 	</ul>
 	</p>
+	
+	</td>
+	
 
 	{% empty %}
-
-	<h2 class="fonte3"> Nenhum adicional cadastrado </h2>
-
+	<tr>
+	<td class="fonte3"> Nenhum adicional cadastrado </td>
+	</tr>
 	{% endfor %}
-</div>
-</div>
+	</tr>
 
+</div>
+</table>
+</div>
 
 <p class="margin"></p>
 
