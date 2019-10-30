@@ -4,6 +4,45 @@
 {% block conteudo %}
 
 <style type="text/css">
+/* INÍCIO DO CARD */
+.imgCard {
+	height: 100%;
+	width: 200px;
+	margin-left: 100px;
+	margin-top: 25px
+}
+.margemEsquerda{
+	margin-left: 100px
+}
+
+.card{
+	cursor: pointer;
+	width: 400px;
+	height: 250px;
+	background: rgb(25,140,90);
+	shape-outside: border-box;
+	border: none;
+}
+
+.frenteCard, .costaCard{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	transition: transform.5s linear;
+}
+
+.card:hover > .frenteCard {transform: perspective(600px) rotateY(-180deg);}
+.card:hover > .costaCard {transform: perspective(600px) rotateY(0deg);}
+
+.frenteCard { transform: perspective(600px) rotateY(0deg); }
+.costaCard { transform: perspective(600px) rotateY(180deg); }
+
+.costaCard-content {
+	text-align: center;
+}
+/* FIM DO CARD */
 
 .fonte3 {
 	font-family: "Chilanka";
@@ -91,7 +130,7 @@ ul.circle {
 	font-family: "Chilanka";
 	color: white;
 	font-weight: 1000;
-	font-size: 25px;	
+	font-size: 25px;
 }
 
 .distancia {
@@ -99,14 +138,14 @@ ul.circle {
 }
 
 #customers {
-  font-family: "Chilanka";
-  border-collapse: collapse;
-  width: 100%;
+	font-family: "Chilanka";
+	border-collapse: collapse;
+	width: 100%;
 }
 
 #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
+	border: 1px solid #ddd;
+	padding: 8px;
 }
 
 #customers tr:nth-child(even){background-color: rgb(20,160,100);}
@@ -114,11 +153,11 @@ ul.circle {
 #customers tr:hover {background-color: #ddd;}
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
 }
 
 </style>
@@ -131,195 +170,123 @@ ul.circle {
 
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12 centralizar">
-		
-		<table id="customers">
-			<tr>
-			<th class="fonte3"> <p class="fonte3">Açaís</p> </th>
-			<th class="fonte3"> <p class="fonte3">Recheios</p> </th>
-			<th class="fonte3"> <p class="fonte3">Cremes</p> </th>
-			<th class="fonte3"> <p class="fonte3">Coberturas</p> </th>
-			<th class="fonte3"> <p class="fonte3">Adicionais</p> </th>
-			</tr>
 
-			
+		<p class="fonte3">Cremes</p> </th>
+		<p class="fonte3">Coberturas</p> </th>
+		<p class="fonte3">Adicionais</p> </th>
 
-		{% for cardapio in cardapio_listar %}
-		<tr>
-				<td>
-		<p class="centralizar"><img src="/media/{{ cardapio.foto }}" alt="Imagem" width="150px" height="200px">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xg-3">
+				<p class="fonte3">Açaís</p> </th>
+				{% for cardapio in cardapio_listar %}
+				<div class="card">
+					<div class="frenteCard margemTopo2">
+						<p class="centralizado">
+							<p class="centralizar"><img src="/media/{{ cardapio.foto }}" alt="Imagem" class="imgCard">
+							</p>
+						</div>
 
-		<ul class="circle">
-
-			<li class="fonte4 centralizar2">{{ cardapio.nome }}</li>
-
-			<li class="fonte4">{{ cardapio.preco }} <a href="{% url 'cardapio_atualizar' cardapio.id %}"><button type="button" class="estilo1">Editar</button>
-			</a> <a href="{% url 'cardapio_remover' cardapio.id %}"><button type="button" class="estilo1">Excluir</button>
-			</a>
-		</li>
-
-		<li class="fonte4">{{ cardapio.quantidade }}</li>
-		<li class="fonte4">{{ cardapio.descrição }}</li>
-	</ul>
-	</p>
-
-	</td>
-
-	{% empty %}
-<tr>
-	<td class="fonte3"> Nenhum açaí cadastrado </td>
-</tr>
-	{% endfor %}
-	
+						<div class="costaCard margemTopo">
+							<div class="costaCard-content">
+								<ul class="circle">
+									<li class="fonte4 centralizar2">{{ cardapio.nome }}</li>
+									<li class="fonte4">Quantidade: {{ cardapio.quantidade }}</li>
+									<li class="fonte4">Descrição: {{ cardapio.descrição }}</li>
+									<li class="fonte4"> Preço: R${{ cardapio.preco }}</li>
+									<a href="{% url 'cardapio_atualizar' cardapio.id %}">
+										<button type="button" class="estilo1">Editar</button>
+									</a>
+									<a href="{% url 'cardapio_remover' cardapio.id %}">
+										<button type="button" class="estilo1">Excluir</button>
+									</a>
 
 
+								</ul>
+							</div>
+						</div>
+					</div>
+					<br>
+					{% empty %}
+					<p class="fonte3"> Nenhum açaí cadastrado </p>
+					{% endfor %}
+				</div>
+				{# ### FIM DA LISTAGEM DE AÇAÍS ### #}
+
+				{# ### INÍCIO DA LISTAGEM DE RECHEIOS ### #}
+				<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg-4 margemTopo2">
+					<p class="fonte3 margemEsquerda">Recheios</p> </th>
+					{% for recheio in recheio %}
+					<div class="card margemEsquerda">
+						<div class="frenteCard margemTopo2">
+							<p class="centralizado">
+								<p class="centralizar"><img src="/media/{{ recheio.foto }}" alt="Imagem" class="imgCard">
+								</p>
+							</div>
+
+							<div class="costaCard margemTopo">
+								<div class="costaCard-content">
+									<ul class="circle">
+										<li class="fonte4 centralizar2">{{ recheio.nome }}</li>
+										<li class="fonte4">Quantidade: {{ recheio.quantidade }}</li>
+										<li class="fonte4">Descrição: {{ recheio.descrição }}</li>
+										<li class="fonte4"> Preço: R${{ recheio.preco }}</li>
+										<a href="{% url 'recheio_atualizar' recheio.id %}">
+											<button type="button" class="estilo1">Editar</button>
+										</a>
+										<a href="{% url 'recheio_remover' recheio.id %}">
+											<button type="button" class="estilo1">Excluir</button>
+										</a>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<br>
+						{% empty %}
+						<p class="fonte3"> Nenhum açaí cadastrado </p>
+						{% endfor %}
+					</div>
+					{# ### FIM DA LISTAGEM DE RECHEIOS ### #}
+
+					{# ### INÍCIO DA LISTAGEM DE COBERTURAS ### #}
+					<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg4 margemTopo2  margemEsquerda">
+						<p class="fonte3 margemEsquerda">Coberturas</p> </th>
+						{% for cobertura in cobertura %}
+						<div class="card margemEsquerda">
+							<div class="frenteCard margemTopo2">
+								<p class="centralizado">
+									<p class="centralizar"><img src="/media/{{ cobertura.foto }}" alt="Imagem" class="imgCard">
+									</p>
+								</div>
+								<div class="costaCard margemTopo">
+									<div class="costaCard-content">
+										<ul class="circle">
+											<li class="fonte4 centralizar2">{{ cobertura.nome }}</li>
+											<li class="fonte4">Quantidade: {{ cobertura.quantidade }}</li>
+											<li class="fonte4">Descrição: {{ cobertura.descrição }}</li>
+											<li class="fonte4"> Preço: R${{ cobertura.preco }}</li>
+											<a href="{% url 'cobertura_atualizar' cobertura.id %}">
+												<button type="button" class="estilo1">Editar</button>
+											</a>
+											<a href="{% url 'cobertura_remover' cobertura.id %}">
+												<button type="button" class="estilo1">Excluir</button>
+											</a>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<br>
+							{% empty %}
+							<p class="fonte3"> Nenhum açaí cadastrado </p>
+							{% endfor %}
+						</div>
+						{# ### FIM DA LISTAGEM DE COBERTURAS ### #}
+					</div>
 
 
-<!-- INÍCIO DA LISTAGEM DE RECHEIOS -->
+				</div>
+			</div>
 
-	
-{% if recheio %}
-
-{% endif %}
-{% for recheios in recheio %}
+			<p class="margin"></p>
 
 
-<td>
-<p class="centralizar"><img src="/media/{{ recheios.foto }}" alt="Imagem" width="200px" height="150px">
-<ul class="circle">
-	<li class="fonte4 centralizar2">{{ recheios.nome }}</li>
-	<li class="fonte4">
-		<a href="{% url 'recheio_atualizar' recheios.id %}">
-			<button type="button" class="estilo1">Editar</button>
-		</a>
-		<a href="{% url 'recheio_remover' recheios.id %}">
-			<button type="button" class="estilo1">Excluir</button>
-		</a>
-	</li>
-</ul>
-</p>
-</td>
-
-{% empty %}
-<tr>
-<td class="fonte3"> Nenhum recheio cadastrado </td>
-</tr>
-{% endfor %}
-	
-
-
-<!-- INÍCIO DA LISTAGEM DE CREMES -->
-
-
-	
-
-{% if creme %}
-
-{% endif %}
-{% for cremes in creme %}
-
-<td>
-<p class="centralizar"><img src="/media/{{ cremes.foto }}" alt="Imagem" width="150px" height="200px">
-<ul class="circle">
-	<li class="fonte4">{{ cremes.nome }}</li>
-	<li class="fonte4">
-		<a href="{% url 'creme_atualizar' cremes.id %}">
-			<button type="button" class="estilo1">Editar</button>
-		</a>
-		<a href="{% url 'creme_remover' cremes.id %}">
-			<button type="button" class="estilo1">Excluir</button>
-		</a>
-	</li>
-</ul>
-</p>
-</td>
-
-{% empty %}
-<tr>
-<td class="fonte3"> Nenhum creme cadastrado </td>
-</tr>
-{% endfor %}
-
-	
-
-
-<!-- INÍCIO DA LISTAGEM DE COBERTURAS -->
-
-	
-		
-		{% if cobertura %}
-		
-		{% endif %}
-
-		{% for coberturas in cobertura %}
-		
-		<td>
-
-		<p class="centralizar"><img src="/media/{{ coberturas.foto }}" alt="Imagem" width="150px" height="200px">
-
-		<ul class="circle">
-
-			<li class="fonte4">{{ coberturas.nome }}</li>
-
-			<li class="fonte4"><a href="{% url 'cobertura_atualizar' coberturas.id %}"><button type="button" class="estilo1">Editar</button>
-			</a> <a href="{% url 'cobertura_remover' coberturas.id %}"><button type="button" class="estilo1">Excluir</button>
-			</a>
-		</li>
-	</ul>
-	</p>
-	</td>
-	
-
-	{% empty %}
-	<tr>
-	<td class="fonte3"> Nenhuma cobertura cadastrada </td>
-	</tr>
-	{% endfor %}
-
-
-
-
-
-<!-- INÍCIO DA LISTAGEM DE ADICIONAIS -->
-
-	
-		
-		{% if adicional %}
-		
-		{% endif %}
-
-		{% for adicional in adicional %}
-		
-		<td>
-
-		<p class="centralizar"><img src="/media/{{ adicional.foto }}" alt="Imagem" width="150px" height="200px">
-
-		<ul class="circle">
-
-			<li class="fonte4">{{ adicional.nome }}</li>
-
-			<li class="fonte4"><a href="{% url 'adicional_atualizar' adicional.id %}"><button type="button" class="estilo1">Editar</button>
-			</a> <a href="{% url 'adicional_remover' adicional.id %}"><button type="button" class="estilo1">Excluir</button>
-			</a>
-		</li>
-		<li class="fonte4">{{ adicional.preco }}</li>
-	</ul>
-	</p>
-	
-	</td>
-	
-
-	{% empty %}
-	<tr>
-	<td class="fonte3"> Nenhum adicional cadastrado </td>
-	</tr>
-	{% endfor %}
-	</tr>
-
-</div>
-</table>
-</div>
-
-<p class="margin"></p>
-
-
-{% endblock conteudo %}
+			{% endblock conteudo %}
