@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+<p> Meus dados </p>
+<p><a href="{% url 'logout' %}"> Logout </a> </p>
+{% endblock conteudo %}

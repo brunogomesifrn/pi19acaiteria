@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+<form method="post">
+	{% csrf_token %}
+	<p> Usuário: {{ form.username }} </p>
+	<p> Senha: {{ form.password }} </p>
+	<button type="submit"> Login </button>
+</form>
+
+{% endblock conteudo %}
