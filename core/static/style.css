@@ -7,6 +7,16 @@
   background-color: rgba(190,35,190,0.7);
 }
 
+.fontee{
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: 900;
+}
+
+.t{
+  margin-left: 20vw
+}
+
 .button:target{
   padding-bottom: 450px
 }
@@ -581,7 +591,7 @@ address a:hover {
 	width: 97%;
 	height: 100%;
   max-height: 360px;
-  border-radius: 10px
+  border-radius: 7%
 }
 
 #shadow {
@@ -655,5 +665,16 @@ ul.circle {
   font-weight: 900;
   margin-left: 50px;
   margin-top: 15px;
+}
 
+.perfil{
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Chilanka';
+  color: white;
+  font-weight: bold;
+}
+.perfil:hover{
+  font-weight: 900;
+  transition: 0.2s
 }

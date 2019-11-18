@@ -1,20 +1,17 @@
 from django.shortcuts import render, redirect
 from .models import Cardapio, Recheios, Coberturas, Cremes, Adicionais
-from .forms import CardapioForm, RecheiosForm, CoberturasForm, CremesForm, AdicionaisForm
+from .forms import CardapioForm, RecheiosForm, CoberturasForm, CremesForm, AdicionaisForm, CustomUser
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
 
 def index(request):
 	return render (request, 'index.html')
 
-def cadastrar_admin(request):
-	return render (request, 'cadastro_admin.html')
+def singup(request):
+	return render (request, 'signup.html')
 
-@login_required
 def perfil(request):
-	return render (request, 'perfil.html')		
+	return render(request, 'perfil.html')
 
 def cardapio(request):
 	return render(request, 'cardapio.html')
@@ -31,7 +28,7 @@ def cardapio_listar(request):
 	'recheio': recheio,
 	'cobertura':cobertura,
 	'creme':creme,
-	'adicional': adicional
+	'adicional': adicional,
 	}
 	return render(request, 'cardapio_lista.html', contexto)
 

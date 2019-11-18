@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+<p> Página de cadastro</p>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" name="button"> Autenticar </button>
+</form>
+
+{% endblock conteudo %}

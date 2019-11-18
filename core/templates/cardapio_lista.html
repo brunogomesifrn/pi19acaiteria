@@ -11,9 +11,8 @@
 	margin-left: 100px;
 	margin-top: 25px
 }
-.margemEsquerda{
-	margin-left: 100px
-}
+.margemEsquerda{ margin-left: 100px }
+.margemTopoCard{ margin-top: 25px; margin-left: -115px}
 
 .card{
 	cursor: pointer;
@@ -171,10 +170,6 @@ ul.circle {
 <div class="row">
 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xg-12 centralizar">
 
-		<p class="fonte3">Cremes</p> </th>
-		<p class="fonte3">Coberturas</p> </th>
-		<p class="fonte3">Adicionais</p> </th>
-
 		<div class="row">
 			<div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xg-3">
 				<p class="fonte3">Açaís</p> </th>
@@ -185,7 +180,6 @@ ul.circle {
 							<p class="centralizar"><img src="/media/{{ cardapio.foto }}" alt="Imagem" class="imgCard">
 							</p>
 						</div>
-
 						<div class="costaCard margemTopo">
 							<div class="costaCard-content">
 								<ul class="circle">
@@ -199,8 +193,6 @@ ul.circle {
 									<a href="{% url 'cardapio_remover' cardapio.id %}">
 										<button type="button" class="estilo1">Excluir</button>
 									</a>
-
-
 								</ul>
 							</div>
 						</div>
@@ -248,7 +240,7 @@ ul.circle {
 					{# ### FIM DA LISTAGEM DE RECHEIOS ### #}
 
 					{# ### INÍCIO DA LISTAGEM DE COBERTURAS ### #}
-					<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg4 margemTopo2  margemEsquerda">
+					<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xg4 margemTopo2">
 						<p class="fonte3 margemEsquerda">Coberturas</p> </th>
 						{% for cobertura in cobertura %}
 						<div class="card margemEsquerda">
@@ -283,10 +275,81 @@ ul.circle {
 					</div>
 
 
-				</div>
-			</div>
+					<div class="row">
+						{# ### INÍCIO DA LISTAGEM DE CREMES ### #}
+						<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6 margemTopo2">
+							<p class="fonte3 margemEsquerda">Cremes</p> </th>
+							{% for creme in creme %}
+							<div class="card margemEsquerda">
+								<div class="frenteCard margemTopo2">
+									<p class="centralizado">
+										<p class="centralizar"><img src="/media/{{ creme.foto }}" alt="Imagem" class="imgCard">
+										</p>
+									</div>
+									<div class="costaCard margemTopo">
+										<div class="costaCard-content">
+											<ul class="circle">
+												<li class="fonte4 centralizar2">{{ creme.nome }}</li>
+												<li class="fonte4">Quantidade: {{ creme.quantidade }}</li>
+												<li class="fonte4">Descrição: {{ creme.descrição }}</li>
+												<li class="fonte4"> Preço: R${{ creme.preco }}</li>
+												<a href="{% url 'creme_atualizar' creme.id %}">
+													<button type="button" class="estilo1">Editar</button>
+												</a>
+												<a href="{% url 'creme_remover' creme.id %}">
+													<button type="button" class="estilo1">Excluir</button>
+												</a>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<br>
+								{% empty %}
+								<p class="fonte3"> Nenhum açaí cadastrado </p>
+								{% endfor %}
+							</div>
+							{# ### FIM DA LISTAGEM DE CREMES ### #}
 
-			<p class="margin"></p>
+							{# ### INÍCIO DA LISTAGEM DE ADICIONAIS ### #}
+							<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xg-6 margemTopo2">
+								<p class="fonte3 margemEsquerda">Adicionais</p> </th>
+								{% for adicional in adicional %}
+								<div class="card margemEsquerda">
+									<div class="frenteCard margemTopo2">
+										<p class="centralizado">
+											<p class="centralizar"><img src="/media/{{ adicional.foto }}" alt="Imagem" class="imgCard">
+											</p>
+										</div>
+										<div class="costaCard margemTopo">
+											<div class="costaCard-content">
+												<ul class="circle">
+													<li class="fonte4 centralizar2">{{ adicional.nome }}</li>
+													<li class="fonte4">Quantidade: {{ adicional.quantidade }}</li>
+													<li class="fonte4">Descrição: {{ adicional.descrição }}</li>
+													<li class="fonte4"> Preço: R${{ adicional.preco }}</li>
+													<a href="{% url 'adicional_atualizar' adicional.id %}">
+														<button type="button" class="estilo1">Editar</button>
+													</a>
+													<a href="{% url 'adicional_remover' adicional.id %}">
+														<button type="button" class="estilo1">Excluir</button>
+													</a>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<br>
+									{% empty %}
+									<p class="fonte3"> Nenhum açaí cadastrado </p>
+									{% endfor %}
+								</div>
+								{# ### FIM DA LISTAGEM DE CREMES ### #}
+							</div>
 
 
-			{% endblock conteudo %}
+						</div>
+					</div>
+
+					<p class="margin"></p>
+
+
+					{% endblock conteudo %}

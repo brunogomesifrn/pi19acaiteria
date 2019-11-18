@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from core.views import index
@@ -22,7 +22,7 @@ from django.contrib.auth import views as auth_views
 from core.views import cardapio, cardapio_listar, cardapio_cadastrar, cardapio_atualizar, cardapio_remover
 from core.views import cadastrar_recheio, cadastrar_creme, cadastrar_cobertura, cadastrar_adicional, recheio_atualizar
 from core.views import recheio_remover, creme_atualizar, creme_remover, cobertura_atualizar
-from core.views import cobertura_remover, adicional_atualizar, adicional_remover, cadastrar_admin, perfil
+from core.views import cobertura_remover, adicional_atualizar, adicional_remover, perfil
 
 urlpatterns = [
 
@@ -57,10 +57,8 @@ urlpatterns = [
     path('adicional_atualizar/<int:id>', adicional_atualizar, name='adicional_atualizar'),
     path('adicional_remover/<int:id>', adicional_remover, name='adicional_remover'),
 
-    #URLs de Autenticação e registro de admin e usuário
-    path('perfil/', perfil, name='perfil'),
-    path('cadastrar_admin/', cadastrar_admin, name='cadastrar_admin'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
+    #URLs de Autenticação e registro de usuário
+    path('', include('allauth.urls')),
+    path('perfil/', perfil, name="perfil"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

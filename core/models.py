@@ -3,6 +3,12 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here
 
+class CustomUser(AbstractUser):
+	cpf = models.CharField('CPF', max_length=11)
+
+	def __str__(self):
+		return self.email
+
 class Cardapio(models.Model):
 	nome = models.CharField('Nome', max_length=200)
 	preco = models.FloatField('Preco', max_length=5)
@@ -32,12 +38,12 @@ class Cremes(models.Model):
 	foto = models.ImageField('Foto', upload_to='creme', null=True)
 
 	def __str__(self):
-		return self.nome		
-				
+		return self.nome
+
 class Adicionais(models.Model):
 	nome = models.CharField('Nome', max_length=200)
 	preco = models.FloatField('Preco', max_length=5)
 	foto = models.ImageField('Foto', upload_to='adicional', null=True)
 
 	def __str__(self):
-		return self.nome						
+		return self.nome

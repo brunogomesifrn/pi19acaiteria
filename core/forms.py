@@ -1,7 +1,15 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Cardapio, Recheios, Coberturas, Cremes, Adicionais
+from django.contrib.auth.forms import UserCreationForm
+from .models import Cardapio, Recheios, Coberturas, Cremes, Adicionais, CustomUser
 
+class customUserCreationForm(UserCreationForm):
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'email', 'cpf')
+        widgets = {
+            'cpf': forms.TextInput(attrs={'placeholder': 'Somente números'})
+        }
 
 class CardapioForm(ModelForm):
     class Meta():
@@ -26,4 +34,4 @@ class CremesForm(ModelForm):
 class AdicionaisForm(ModelForm):
     class Meta():
         model = Adicionais
-        fields = ['nome', 'preco', 'foto']                
+        fields = ['nome', 'preco', 'foto']

@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'widget_tweaks',
     'django_cleanup',
     'core',
@@ -52,12 +56,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pi19acaiteria.urls'
+ROOT_URLCONF = 'pi19acaiteria.urls' # Semaias trouxa, vá tomar banho.
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,8 +130,32 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'media'
 
-LOGIN_URL = '/login/'
-
+ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
 LOGIN_REDIRECT_URL = 'perfil'
+ACCOUNT_LOGOUT_GET_ON = True
 
-LOGOUT_REDIRECT_URL = 'index'
+# Autenticação
+AUTH_USER_MODEL = 'core.CustomUser'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_SINGUP_PASSWORD_ENTER_TWICE = True
+
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_LOGIN_ATTEMPS_TIMEOUT = 60 * 5
+
+ACCOUNT_ATHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+
+ACCOUNT_FORMS = {
+    'signup': 'core.forms.customUserCreationForm',
+}
